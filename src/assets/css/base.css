@@ -23,7 +23,6 @@ input,img{
   padding: 0;
   border: 0 none;
   outline-style: none;
-  vertical-align: bottom; 
 }
 
 /*行内元素*/
@@ -55,4 +54,14 @@ table{
   /*边框合并*/
   border-collapse:collapse;
   border-spacing:0;
+}
+
+.el-card{
+  margin-top: 15px;
+}
+.el-table{
+  margin-top: 15px;
+}
+.el-pagination{
+  margin-top: 15px;
 }

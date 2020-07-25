@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .wrap{
+      width: 300px;
+      height: 200px;
+      transition: .5s;
+    }
+    .content{
+      line-height: 24px;
+      text-align: center;
+      background-color: skyblue;
+      transition: .5s;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="content">content</div>
+  </div>
+  <button>change</button>
+</body>
+</html>
+<script>
+let flag = 0
+document.getElementsByTagName('button')[0].onclick = function(){
+  flag%2 === 0 ? document.querySelector('.wrap').style.width = '100px' : document.querySelector('.wrap').style.width = ''
+  flag++
+}
+
+</script>

@@ -4,6 +4,7 @@ import router from './route'
 import './plugin/element.js'
 import './network'
 
+import './assets/icon/iconfont.css'
 import "./assets/css/base.css"
 import 'element-ui/lib/theme-chalk/index.css'
 

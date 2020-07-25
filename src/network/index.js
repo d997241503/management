@@ -7,4 +7,9 @@ let http = axios.create({
   timeout:5000
 })
 
+http.interceptors.request.use(config => {
+  config.headers.Authorization = window.sessionStorage.getItem('token')
+  return config
+})
+
 Vue.prototype.$http = http

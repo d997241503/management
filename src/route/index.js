@@ -5,6 +5,8 @@ Vue.use(Router)
 
 let login = () => import("@/view/login/Login")
 let home = () => import('@/view/home/Home')
+let welecome = () => import('@/view/home/childcomp/Welecome')
+let users = () => import('@/view/users/Users')
 
 let routes = [
   {
@@ -17,7 +19,29 @@ let routes = [
   },
   {
     path:'/home',
-    component:home
+    component:home,
+    children:[
+      {
+        path:'',
+        component:welecome
+      },
+      {
+        path:'users',
+        component:users
+      },
+      {
+        path:'roles',
+        component:welecome
+      },
+      {
+        path:'rights',
+        component:welecome
+      },
+      {
+        path:'goods',
+        component:welecome
+      }
+    ]
   }
 ]
 
