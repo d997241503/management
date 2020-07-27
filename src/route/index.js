@@ -7,6 +7,8 @@ let login = () => import("@/view/login/Login")
 let home = () => import('@/view/home/Home')
 let welecome = () => import('@/view/home/childcomp/Welecome')
 let users = () => import('@/view/users/Users')
+let rights = () => import('@/view/rights/Rights')
+let roles = () => import('@/view/rights/Roles')
 
 let routes = [
   {
@@ -31,11 +33,11 @@ let routes = [
       },
       {
         path:'roles',
-        component:welecome
+        component:roles
       },
       {
         path:'rights',
-        component:welecome
+        component:rights
       },
       {
         path:'goods',

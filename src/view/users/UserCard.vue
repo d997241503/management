@@ -32,7 +32,7 @@
             <el-button type="primary" icon="el-icon-edit" size="mini" @click="editClick(scope.row.id)"></el-button>
             <el-button type="danger" icon="el-icon-delete" size="mini" @click="deleteClick(scope.row.id)"></el-button>
             <el-tooltip content="分配角色" placement="top" :enterable="false">
-              <el-button type="warning" icon="el-icon-setting" size="mini"></el-button>
+              <el-button type="warning" icon="el-icon-setting" size="mini" @click="showSetRoleDialog(scope.row)"></el-button>
             </el-tooltip>
           </template>
         </el-table-column>
@@ -55,18 +55,22 @@
 
     <!-- 编辑用户对话框 -->
     <edit-user-dialog :userId="userId"></edit-user-dialog>
+
+    <!-- 分配角色对话框 -->
+    <set-role-dialog :user="settingUser" :rolesList="rolesList"></set-role-dialog>
   </div>
 </template>
 
 <script>
 import AddUserDialog from './AddUserDialog'
 import EditUserDialog from './EditUserDialog'
-
+import SetRoleDialog from './SetRoleDialog'
 export default {
   name:'',
   components:{
     AddUserDialog,
-    EditUserDialog
+    EditUserDialog,
+    SetRoleDialog
   },
   data(){
     return{
@@ -78,11 +82,16 @@ export default {
       },
       total:0,
       // 用于编辑对话框获取用户数据
-      userId:''
+      userId:'',
+      // 用于分配角色对话框获取用户数据
+      settingUser:{},
+      // 所有角色列表
+      rolesList:[]
     }
   },
   created(){
     this.getUsersData()
+    this.getRolesList()
   },
   methods:{
     getUsersData(){
@@ -139,6 +148,16 @@ export default {
         })
       }).catch(() => {
         this.$message.info('取消删除成功')
+      })
+    },
+    showSetRoleDialog(user){
+      this.settingUser = user
+      this.$children[3].dialogVisible = true
+    },
+    //获取所有角色，用于分配权限
+    getRolesList(){
+      this.$http.get('/roles').then(res => {
+        this.rolesList = res.data.data
       })
     }
   }
