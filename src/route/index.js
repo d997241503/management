@@ -9,6 +9,7 @@ let welecome = () => import('@/view/home/childcomp/Welecome')
 let users = () => import('@/view/users/Users')
 let rights = () => import('@/view/rights/Rights')
 let roles = () => import('@/view/rights/Roles')
+let goodscate = () => import('@/view/goodscate/GoodsCate')
 
 let routes = [
   {
@@ -40,8 +41,8 @@ let routes = [
         component:rights
       },
       {
-        path:'goods',
-        component:welecome
+        path:'categories',
+        component:goodscate
       }
     ]
   }

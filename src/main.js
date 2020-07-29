@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './route'
 import './plugin/element.js'
+import './plugin/treetable.js'
 import './network'
 
 import './assets/icon/iconfont.css'

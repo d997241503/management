@@ -73,3 +73,9 @@ table{
   display: flex;
   align-items: center;
 }
+.el-dialog{
+  min-width: 660px;
+}
+.el-cascader{
+  width: 100%;
+}
