@@ -9,7 +9,9 @@ let welecome = () => import('@/view/home/childcomp/Welecome')
 let users = () => import('@/view/users/Users')
 let rights = () => import('@/view/rights/Rights')
 let roles = () => import('@/view/rights/Roles')
-let goodscate = () => import('@/view/goodscate/GoodsCate')
+let goodscate = () => import('@/view/goods/goodscate/GoodsCate')
+let goodsparmas = () => import('@/view/goods/goodsparams/GoodsParams')
+let reports = () => import('@/view/reports/Reports')
 
 let routes = [
   {
@@ -43,6 +45,14 @@ let routes = [
       {
         path:'categories',
         component:goodscate
+      },
+      {
+        path:'params',
+        component:goodsparmas
+      },
+      {
+        path:'reports',
+        component:reports
       }
     ]
   }

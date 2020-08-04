@@ -182,4 +182,7 @@ export default {
 .tree-table{
   margin-top: 15px;
 }
+.el-cascader{
+  width: 100%;
+}
 </style>
