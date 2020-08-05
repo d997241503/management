@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+
 Vue.use(Router)
 
 let login = () => import("@/view/login/Login")
@@ -11,6 +12,8 @@ let rights = () => import('@/view/rights/Rights')
 let roles = () => import('@/view/rights/Roles')
 let goodscate = () => import('@/view/goods/goodscate/GoodsCate')
 let goodsparmas = () => import('@/view/goods/goodsparams/GoodsParams')
+let goodslist = () => import('@/view/goods/goodslist/GoodsList')
+let orderslist = () => import('@/view/orders/OrdersList')
 let reports = () => import('@/view/reports/Reports')
 
 let routes = [
@@ -49,6 +52,14 @@ let routes = [
       {
         path:'params',
         component:goodsparmas
+      },
+      {
+        path:'goods',
+        component:goodslist
+      },
+      {
+        path:'orders',
+        component:orderslist
       },
       {
         path:'reports',

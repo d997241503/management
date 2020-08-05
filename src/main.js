@@ -5,6 +5,7 @@ import './plugin/element.js'
 // import antd from 'ant-design-vue'
 import './plugin/treetable.js'
 import './network'
+import './util/filter.js'
 
 import './assets/icon/iconfont.css'
 import "./assets/css/base.css"
