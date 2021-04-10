@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+/** 跳转路由时显示进度条 */
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
+
 
 Vue.use(Router)
 
@@ -77,12 +81,17 @@ let router = new Router({
 
 
 router.beforeEach((to,from,next) => {
+  NProgress.start()
   if(to.path === '/login')return next();
 
   if(!window.sessionStorage.getItem('token')){
     return next('/login')
   }
   next()
+})
+
+router.afterEach(() => {
+  NProgress.done()
 })
 
 export default router
